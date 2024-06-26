@@ -289,11 +289,11 @@ def run(mode = "Train"):
                     'n_sub': n_sub, 'n_channels': n_channels, 'in_samples': in_samples,
                     'data_path': data_path, 'isStandard': True, 'LOSO': True}
     # Set training hyperparamters
-    train_conf = { 'batch_size': 128, 'epochs': 1000, 'patience': 300, 'lr': 0.001,'n_train': 1,
-                  'LearnCurves': True, 'from_logits': False, 'model':'EEGTCNet'}
+    train_conf = { 'batch_size': 64, 'epochs': 500, 'patience': 100, 'lr': 0.001,'n_train': 1,
+                  'LearnCurves': True, 'from_logits': False, 'model':'ATCNet'}
 
     # Create a folder to store the results of the experiment
-    results_path = os.getcwd() + "/results" + "_" + str(train_conf.get('model'))
+    results_path = os.getcwd() + "/results" + "_" + str(train_conf.get('model') + "_paper")
     if not os.path.exists(results_path):
       os.makedirs(results_path)   # Create a new directory if it does not exist 
 
